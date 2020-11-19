@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".VerificationActivity">
+
+
+    <EditText
+        android:id="@+id/confirmEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:inputType="number"
+        android:layout_centerInParent="true"
+        android:layout_margin="20dp"
+        />
+
+    <com.tuyenmonkey.mkloader.MKLoader
+        android:layout_below="@id/confirmEditText"
+        android:layout_centerHorizontal="true"
+        android:layout_width="70dp"
+        android:layout_height="70dp"
+        android:id="@+id/loader"
+        android:visibility="gone"
+        app:mk_color="#000000"
+        app:mk_type="FishSpinner"
+        />
+
+    <Button
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/loader"
+        android:id="@+id/confirmBtn"
+        android:text="CONFIRM otp"
+        android:layout_centerHorizontal="true"
+        android:onClick="confirmOTP"
+        />
+
+    <TextView
+        android:id="@+id/resendTv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text=""
+        android:textSize="18sp"
+        android:layout_below="@id/confirmBtn"
+        android:textStyle="bold"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="20dp"
+        android:onClick="resend"
+        />
+
+
+</RelativeLayout>

@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">Firebase OTP</string>
+    <string name="number">Enter Your Mobile Number</string>
+    <string name="otp">GET OTP</string>
+</resources>
