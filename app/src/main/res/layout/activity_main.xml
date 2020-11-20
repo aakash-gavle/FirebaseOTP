@@ -1,45 +1,46 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".MainActivity">
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:id="@+id/linearLayout"
-        android:layout_centerInParent="true">
-
-        <com.hbb20.CountryCodePicker
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="20dp"
-            android:layout_marginTop="2dp"
-            app:ccp_contentColor="@color/black"
-            android:id="@+id/ccp"
-            />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="50dp"
+        android:gravity="center_horizontal"
+        >
 
         <EditText
-
-            android:id="@+id/editText"
+            android:id="@+id/fNameTv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="@string/number"
-            android:inputType="number"/>
-
+            android:hint="First Name"
+            />
+        <EditText
+            android:id="@+id/lNameTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Last Name"
+            />
+        <EditText
+            android:id="@+id/numberTv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:hint="Enter Your Number"
+            android:inputType="number"
+            />
+        <Button
+            android:id="@+id/otpBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="GET OTP"
+            android:onClick="getOtp"
+            />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/getOtpBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/otp"
-        android:layout_below="@+id/linearLayout"
-        android:layout_margin="20dp"
-        android:onClick="getOtp"/>
 
 </RelativeLayout>

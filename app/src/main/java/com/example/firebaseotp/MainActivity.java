@@ -4,39 +4,34 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.text.TextUtils;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.Toast;
 
-import com.hbb20.CountryCodePicker;
 
 public class MainActivity extends AppCompatActivity {
 
-    CountryCodePicker countryCodePicker;
-    EditText number;
-    Button getOtp;
-
+    EditText fNameTv,lNameTv,numberTv;
+    Button getOTP;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        countryCodePicker=findViewById(R.id.ccp);
-        number=findViewById(R.id.editText);
-        getOtp=findViewById(R.id.getOtpBtn);
-        countryCodePicker.registerCarrierNumberEditText(number);
+        fNameTv=findViewById(R.id.fNameTv);
+        lNameTv=findViewById(R.id.lNameTv);
+        numberTv=findViewById(R.id.numberTv);
+        getOTP=findViewById(R.id.otpBtn);
     }
 
     public void getOtp(View view) {
-        if (!number.getText().toString().isEmpty()&&number.getText().toString().length()==10){
+        if (!numberTv.getText().toString().isEmpty()&&numberTv.getText().toString().length()==10){
         Intent intent =new Intent(MainActivity.this,VerificationActivity.class);
-        intent.putExtra("number",countryCodePicker.getFullNumberWithPlus());
+        intent.putExtra("number",numberTv.getText().toString());
         startActivity(intent);
         }
         else{
-            number.setError("Phone number is not Valid");
+            numberTv.setError("Phone number is not Valid");
         }
     }
 }

@@ -1,55 +1,36 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".VerificationActivity">
-
+    tools:context=".VerificationActivity"
+    android:orientation="vertical"
+    android:layout_marginTop="120dp"
+    android:padding="50dp"
+    >
 
     <EditText
-        android:id="@+id/confirmEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:inputType="number"
-        android:layout_centerInParent="true"
-        android:layout_margin="20dp"
-        />
-
-    <com.tuyenmonkey.mkloader.MKLoader
-        android:layout_below="@id/confirmEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_width="70dp"
-        android:layout_height="70dp"
-        android:id="@+id/loader"
-        android:visibility="gone"
-        app:mk_color="#000000"
-        app:mk_type="FishSpinner"
-        />
+        android:hint="Enter OTP"
+        android:id="@+id/otp"
+        android:layout_height="wrap_content"
+        android:layout_width="match_parent" />
 
     <Button
-        android:layout_width="wrap_content"
+        android:background="#fece2f"
+        android:id="@+id/verify_btn"
         android:layout_height="wrap_content"
-        android:layout_below="@id/loader"
-        android:id="@+id/confirmBtn"
-        android:text="CONFIRM otp"
-        android:layout_centerHorizontal="true"
-        android:onClick="confirmOTP"
-        />
-
-    <TextView
-        android:id="@+id/resendTv"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text=""
-        android:textSize="18sp"
-        android:layout_below="@id/confirmBtn"
-        android:textStyle="bold"
-        android:layout_centerHorizontal="true"
         android:layout_marginTop="20dp"
-        android:onClick="resend"
-        />
+        android:layout_width="match_parent"
+        android:text="Verify"
+        android:onClick="verifyBtn"/>
 
-
-</RelativeLayout>
+    <ProgressBar
+        android:id="@+id/progress_bar"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:layout_width="wrap_content"
+        android:visibility="gone"/>
+</LinearLayout>
